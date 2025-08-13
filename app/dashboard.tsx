@@ -7,13 +7,23 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { Header } from "../../components";
-import { colors } from "../../constants/colors";
+import { Header } from "../components";
+import { colors } from "../constants/colors";
 
-export default function HomeScreen() {
+export default function DashboardScreen() {
   const handleViewTask = () => {
     console.log("View Task pressed");
     router.push("/todaystasks");
+  };
+
+  const handleAddNew = () => {
+    console.log("Add new pressed");
+    // Add your add new logic here
+  };
+
+  const handleTabPress = (tab: string) => {
+    console.log("Tab pressed:", tab);
+    // Add your tab navigation logic here
   };
 
   return (
@@ -266,44 +276,45 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontSize: 12,
     fontWeight: "600",
-    fontFamily: "NotoSans-SemiBold",
+    fontFamily: "NotoSans-Medium",
   },
   inProgressCards: {
+    flexDirection: "row",
     gap: 15,
   },
   taskCard: {
-    backgroundColor: "#F9FAFB",
+    flex: 1,
+    backgroundColor: "#F3F4F6",
     borderRadius: 12,
     padding: 16,
+    minHeight: 120,
   },
   officeProjectCard: {
-    borderLeftWidth: 4,
-    borderLeftColor: "#3B82F6",
+    backgroundColor: "#E0F2FE",
   },
   personalProjectCard: {
-    borderLeftWidth: 4,
-    borderLeftColor: "#F59E0B",
+    backgroundColor: "#FEF3C7",
   },
   taskCardHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: 10,
+    marginBottom: 8,
   },
   taskCardTitle: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: "600",
     color: "#333",
     fontFamily: "NotoSans-Medium",
   },
   briefcaseIcon: {
-    fontSize: 20,
+    fontSize: 16,
   },
   userIcon: {
-    fontSize: 20,
+    fontSize: 16,
   },
   taskCardSubtitle: {
-    fontSize: 14,
+    fontSize: 12,
     color: "#666",
     marginBottom: 15,
     fontFamily: "NotoSans-Regular",
